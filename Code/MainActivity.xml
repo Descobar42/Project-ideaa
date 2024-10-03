@@ -1,0 +1,92 @@
+package com.example.taskmanagerapp
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            TaskManagerApp()
+        }
+    }
+}
+
+@Composable
+fun TaskManagerApp() {
+    val navController = rememberNavController()
+    Scaffold(
+        topBar = {
+            TopAppBar(title = { Text("Gestor de Tareas") })
+        },
+        bottomBar = {
+            BottomNavigation() {
+                BottomNavigationItem(
+                    icon = { Icon(Icons.Default.List, contentDescription = null) },
+                    label = { Text("Pendientes") },
+                    selected = false,
+                    onClick = { navController.navigate("pending") }
+                )
+                BottomNavigationItem(
+                    icon = { Icon(Icons.Default.CheckCircle, contentDescription = null) },
+                    label = { Text("Completadas") },
+                    selected = false,
+                    onClick = { navController.navigate("completed") }
+                )
+                BottomNavigationItem(
+                    icon = { Icon(Icons.Default.Settings, contentDescription = null) },
+                    label = { Text("Ajustes") },
+                    selected = false,
+                    onClick = { navController.navigate("settings") }
+                )
+            }
+        }
+    ) { innerPadding ->
+        NavHost(navController, startDestination = "pending", Modifier.padding(innerPadding)) {
+            composable("pending") { PendingTasksScreen() }
+            composable("completed") { CompletedTasksScreen() }
+            composable("settings") { SettingsScreen() }
+        }
+    }
+}
+
+@Composable
+fun PendingTasksScreen() {
+    Surface(modifier = Modifier.fillMaxSize()) {
+        Text("Tareas Pendientes", style = MaterialTheme.typography.h4)
+    }
+}
+
+@Composable
+fun CompletedTasksScreen() {
+    Surface(modifier = Modifier.fillMaxSize()) {
+        Text("Tareas Completadas", style = MaterialTheme.typography.h4)
+    }
+}
+
+@Composable
+fun SettingsScreen() {
+    Surface(modifier = Modifier.fillMaxSize()) {
+        Text("Ajustes", style = MaterialTheme.typography.h4)
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    TaskManagerApp()
+}
