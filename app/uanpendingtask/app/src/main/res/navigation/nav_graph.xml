@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/calendarFragment">
+
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.uanpendingtask.CalendarFragment"
+        tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="com.example.uanpendingtask.AddTaskFragment"
+        tools:layout="@layout/fragment_add_task" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.uanpendingtask.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_calendar"
+        android:name="com.example.uanpendingtask.CalendarFragment"
+        android:label="Calendar Fragment" />
+</navigation>
