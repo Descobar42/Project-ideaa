@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/calendarFragment">
+
+    <!-- Fragmento para el calendario -->
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.uanpendingtask.CalendarFragment"
+        android:label="Calendar"
+        tools:layout="@layout/fragment_calendar" />
+
+    <!-- Fragmento para añadir tarea -->
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="com.example.uanpendingtask.AddTaskFragment"
+        android:label="Add Task"
+        tools:layout="@layout/fragment_add_task" />
+
+    <!-- Fragmento para el perfil -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.uanpendingtask.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
+
