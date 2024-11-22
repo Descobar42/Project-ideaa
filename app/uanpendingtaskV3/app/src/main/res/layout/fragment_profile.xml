@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+    <!-- Ícono del perfil -->
+    <ImageView
+        android:id="@+id/profileIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_profile"
+        android:contentDescription="Icono de perfil"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop" />
+
+    <!-- Correo -->
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo electrónico: usuario@ejemplo.com"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Contraseña -->
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contraseña: ********"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Breve descripción -->
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esta aplicación te permite gestionar tus tareas del trabajo, la universidad o el colegio. ¡Organiza tu día de forma sencilla!"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Número de tareas añadidas -->
+    <TextView
+        android:id="@+id/tvTaskCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tareas añadidas: 0"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+</LinearLayout>
+
+
